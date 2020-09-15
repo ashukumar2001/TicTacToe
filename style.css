@@ -26,4 +26,9 @@ section {
     font-size: 1rem;
     padding: 0.3rem;
     font-family: cursive;
+    transition: all .5s;
+}
+.game--restart:hover {
+    background: black;
+    color: white;
 }
