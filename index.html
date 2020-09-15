@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe By Ashu Kumar</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7e611a5a25.js" crossorigin="anonymous"></script>    
 </head>
 <body>
     <section>
+        <!-- <button id="toggle-dark-mode"><i id="toggle-icon" class="fas fa-toggle-on"></i></button> -->
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
         <h1 class="game--title">Tic Tac Toe</h1>
         <div class="game--container">
             <div data-cell-index="0" class="cell"></div>
@@ -24,5 +30,6 @@
         <button class="game--restart">Restart Game</button>
     </section>
     <script src="script.js"></script>
+    <script src="dark_mode.js"></script>
 </body>
 </html>

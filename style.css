@@ -1,3 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2 {
+    margin: 1rem auto;
+}
 body {
     font-family: cursive;
 }
@@ -7,11 +15,11 @@ section {
 .game--container {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    width: 306px;
+    width: 300px;
     margin: 50px auto;
 }
 .cell {
-    font-family: cursive;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100px;
     height: 100px;
     box-shadow: 0 0 0 1px #333333;
@@ -26,9 +34,86 @@ section {
     font-size: 1rem;
     padding: 0.3rem;
     font-family: cursive;
-    transition: all .5s;
+    /* transition: background .5s; */
 }
 .game--restart:hover {
     background: black;
     color: white;
 }
+.game--restart:focus, .toggle-dark-mode {
+    outline: none;
+}
+
+button#toggle-dark-mode {
+    background-color: rgba(207, 180, 180, 0);
+    border: none;
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    /* border: 1px solid black; */
+    /* color: black; */
+}
+
+.dark-mode {
+    background: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    box-shadow: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    z-index: 1;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+}
+
+.slider .round {
+    border-radius: 34px;
+}
+.slider .round:before {
+    border-radius: 50%;
+}
+
+
+
