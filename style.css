@@ -37,6 +37,7 @@ section {
     cursor: pointer;
     line-height: 100px;
     font-size: 60px;
+    -webkit-tap-highlight-color: transparent;
 }
 .game--status {
     margin-top: 0px;

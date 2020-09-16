@@ -26,7 +26,7 @@ we have declared them as functions, so that the actual message gets created with
 current data every time we need it.
 */
 const winningMessage = ()=> `Player ${currentPlayer} has won!`;
-const drawMessage = () => `Game ended in a draw!`;
+const drawMessage = () => `Draw!!!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 
 // We set the initial message to let the players know whose turn it is
@@ -102,6 +102,15 @@ function handleResultValidation() {
     }
     if(roundWon) {
         statusDisplay.innerHTML = winningMessage();
+        gameActive = false;
+        return;
+    }
+
+    // We will check weather there are any values in our game state array
+    // that are still not populated with a player sign
+    let roundDraw = !gameState.includes("");
+    if(roundDraw) {
+        statusDisplay.innerHTML = drawMessage();
         gameActive = false;
         return;
     }
