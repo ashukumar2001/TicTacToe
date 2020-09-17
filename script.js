@@ -40,8 +40,8 @@ function handleRestartGame() {}
 
 // And finally we add our event listners to the actural game cells, as well as
 // our restrat button
-document.querySelectorAll('.cell')
-    .forEach(cell => cell.addEventListener('click', handleCellClick));
+let cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.addEventListener('click', handleCellClick));
 
 document.querySelector('.game--restart')
     .addEventListener('click', handleRestartGame);
@@ -97,6 +97,7 @@ function handleResultValidation() {
         }
         if(a === b && b === c) {
             roundWon = true;
+            colorChangeOnWinning(winCondition);
             break;
         }
     }
@@ -133,5 +134,23 @@ function handleRestartGame() {
     gameState = ["", "", "", "", "", "", "", "", ""];
     statusDisplay.innerHTML = currentPlayerTurn();
     document.querySelectorAll('.cell')
-        .forEach(cell => cell.innerHTML = "");
+        .forEach(cell => {
+            cell.innerHTML = "";
+            if(cell.classList.contains('dark-mode')) {
+                cell.style.backgroundColor = "rgb(36, 36, 36)";
+            } else {
+                cell.style.backgroundColor = "#ffffff";
+            }
+        });
+    
+}
+
+// colorChangeOnWinning ++++++++++++++++++++++++++++++++++++++++++++++++++++
+function colorChangeOnWinning(winCondition) {
+    for(let i = 0; i < 3; i++) {
+        cells[winCondition[i]].style.backgroundColor = "#fffa79";
+        if(cells[winCondition[i]].classList.contains("dark-mode")) {
+            cells[winCondition[i]].style.backgroundColor = "rgb(0 13 149)";
+        }
+    }    
 }
