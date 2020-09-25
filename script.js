@@ -136,11 +136,7 @@ function handleRestartGame() {
     document.querySelectorAll('.cell')
         .forEach(cell => {
             cell.innerHTML = "";
-            if(cell.classList.contains('dark-mode')) {
-                cell.style.backgroundColor = "rgb(36, 36, 36)";
-            } else {
-                cell.style.backgroundColor = "#ffffff";
-            }
+            cell.style.backgroundColor = document.body.style.backgroundColor;
         });
     
 }
