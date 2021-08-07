@@ -74,6 +74,7 @@ section {
   .cell {
     width: 70px;
     height: 70px;
+    line-height: 70px;
   }
   .game--title {
     font-size: 1.5rem;
