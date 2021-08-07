@@ -1,0 +1,15 @@
+{
+  "short_name": "TicTacToe",
+  "name": "Tic Tac Toe Game",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#141642",
+  "background_color": "#ffffff"
+}
